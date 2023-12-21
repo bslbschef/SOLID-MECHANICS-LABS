@@ -35,10 +35,10 @@
       const selectedTimeslot = document.getElementById('timeslots').value;
 
       // 发送选课数据到GitHub仓库
-      fetch('https://api.github.com/repos/你的用户名/你的仓库名/contents/selectedData.json', {
+      fetch('https://api.github.com/repos/bslbschef/SOLID-MECHANICS-LABS/selectedData.json', {
         method: 'PUT',
         headers: {
-          'Authorization': 'Bearer 你的GitHub令牌',
+          'Authorization': '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',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ students: selectedStudents, timeslot: selectedTimeslot }),
