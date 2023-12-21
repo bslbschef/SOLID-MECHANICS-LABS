@@ -84,6 +84,12 @@
       const selectedStudents = Array.from(document.getElementById('students').selectedOptions).map(option => option.value);
       const selectedTimeslot = document.getElementById('timeslots').value;
 
+      alert('Selected Students: ' + selectedStudents.join(', '));
+      alert('Selected Timeslot: ' + selectedTimeslot);
+      
+      //const selectedStudents = Array.from(document.getElementById('students').selectedOptions).map(option => option.value);
+      //const selectedTimeslot = document.getElementById('timeslots').value;
+
       // 发送选课数据到GitHub仓库
       fetch('https://api.github.com/repos/bslbschef/SOLID-MECHANICS-LABS/selectedData.json', {
         method: 'PUT',
