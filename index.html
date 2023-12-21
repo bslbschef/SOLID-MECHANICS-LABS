@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选课系统</title>
+</head>
+<body>
+  <h1>选课系统</h1>
+
+  <label for="students">选择学生：</label>
+  <select id="students" multiple>
+    <option value="学生1">学生1</option>
+    <option value="学生2">学生2</option>
+    <option value="学生3">学生3</option>
+    <!-- 添加更多学生选项 -->
+  </select>
+
+  <br>
+
+  <label for="timeslots">选择时间段：</label>
+  <select id="timeslots">
+    <option value="2023-12-21-12:00-13:00">2023-12-21 12:00-13:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
+    <!-- 添加更多时间段选项 -->
+  </select>
+
+  <br>
+
+  <button onclick="saveSelection()">确定</button>
+
+  <script>
+    function saveSelection() {
+      const selectedStudents = Array.from(document.getElementById('students').selectedOptions).map(option => option.value);
+      const selectedTimeslot = document.getElementById('timeslots').value;
+
+      // 发送选课数据到GitHub仓库
+      fetch('https://api.github.com/repos/你的用户名/你的仓库名/contents/selectedData.json', {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer 你的GitHub令牌',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ students: selectedStudents, timeslot: selectedTimeslot }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('选课成功！');
+
+        // 清空选择
+        document.getElementById('students').selectedIndex = -1;
+        document.getElementById('timeslots').selectedIndex = 0;
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
