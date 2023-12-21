@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>选课系统</title>
+  <title></title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -41,28 +41,43 @@
   </style>
 </head>
 <body>
-  <h1>选课系统</h1>
+  <h1>Solid mechanics experiment course selection table</h1>
 
-  <label for="students">选择学aaa生：</label>
+  <label for="students">Student name</label>
   <select id="students" multiple>
-    <option value="学生1">学1生1</option>
+    <option value="学生1">学生1</option>
     <option value="学生2">学生2</option>
     <option value="学生3">学生3</option>
+    <option value="学生4">学生4</option>
+    <option value="学生5">学生5</option>
+    <option value="学生6">学生6</option>
+    <option value="学生7">学生7</option>
+    <option value="学生8">学生8</option>
+    <option value="学生9">学生9</option>
+    <option value="学生10">学生10</option>
+    <option value="学生11">学生11</option>
+    <option value="学生12">学生12</option>
+    <option value="学生13">学生13</option>
     <!-- 添加更多学生选项 -->
   </select>
 
   <br>
 
-  <label for="timeslots">选择时间段：</label>
+  <label for="timeslots">Selection period</label>
   <select id="timeslots">
     <option value="2023-12-21-12:00-13:00">2023-12-21 12:00-13:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
+    <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
     <option value="2023-12-21-13:00-14:00">2023-12-21 13:00-14:00</option>
     <!-- 添加更多时间段选项 -->
   </select>
 
   <br>
 
-  <button onclick="saveSelection()">确定</button>
+  <button onclick="saveSelection()">Submit</button>
 
   <script>
     function saveSelection() {
